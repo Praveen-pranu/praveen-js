@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <style>
+       body {
+        font-size: medium;
+        margin:10px;
+        padding:80vh;
+        text-align : center;    
+    }
+     </style>
+    <h2>Login Page</h2>
+
+    <!-- Div to hold the form inputs and the login button -->
+    <div id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Div to display the result -->
+    <div id="result"></div>
+
+    <!-- JavaScript for login validation -->
+    <script>
+        function login() {
+            // Correct username and password
+            const correctUsername = "Admin";
+            const correctPassword = "Admin@123";
+
+            // Get the values from the input fields
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the username matches
+            if (username === correctUsername) {
+                // If username is correct, check the password
+                if (password === correctPassword) {
+                    document.getElementById("result").textContent = "Login success";
+                    document.getElementById("result").style.color = "green";
+                } else {
+                    document.getElementById("result").textContent = "Incorrect password";
+                    document.getElementById("result").style.color = "red";
+                }
+            } else {
+                // Incorrect username or password
+                document.getElementById("result").textContent = "Incorrect username or password";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
